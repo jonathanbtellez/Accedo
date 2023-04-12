@@ -1,0 +1,22 @@
+{
+  "name": "accedo",
+  "version": "1.0.0",
+  "description": "\"App to show a lit of pokemons from pokeApi\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanbtellez/Accedo.git"
+  },
+  "author": "Jonathan Tellez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathanbtellez/Accedo/issues"
+  },
+  "homepage": "https://github.com/jonathanbtellez/Accedo#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha3"
+  }
+}
