@@ -1,0 +1,17 @@
+.body {
+  background: #495057;
+  color: #ced4da;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px; }
+
+.header {
+  background: #212529; }
+  .header .header-image {
+    width: 100%; }
+  .header .header-image-container {
+    width: 150px;
+    align-self: center; }
+  .header .header-tiny-image-container {
+    width: 80px; }
+
+/*# sourceMappingURL=style.css.map */
