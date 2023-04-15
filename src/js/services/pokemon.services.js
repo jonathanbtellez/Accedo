@@ -1,18 +1,16 @@
-const URL = "https://pokeapi.co/api/v2/pokemon/";
+import { pokemonRepository } from "../repository/pokemon.repository.js";
 
 /**
- * This method do a fetching of the pokemons that are in saved in the API
- * @returns A promise tha returns the pokemons
+ * This method called the method getPokemons in the class pokemon controller to be use
+ * let us insert the business logic in this class
  */
-const getPokemons = async () => { const response = await fetch(URL); const jsonData = await response.json(); return jsonData.results; }
+const getPokemons = async () => { return pokemonRepository.getPokemons() }
 
 /**
- * This method do a fetching of the pokemon information that are in saved in the API
- * @param {Number} idPokemon 
- * @returns 
+ * This method called the method getPokemon in the class pokemon controller to be use
+ * let us insert the business logic in this class
  */
-const getPokemon = async (idPokemon) => { const response = await fetch(URL + idPokemon); const jsonData = await response.json(); return jsonData; }
-console.log(getPokemon(1))
+const getPokemon = async (pokemonUrl) => { return  pokemonRepository.getPokemon(pokemonUrl) }
 
 export const pokemonService = {
     getPokemons,

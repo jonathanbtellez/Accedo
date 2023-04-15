@@ -14,4 +14,35 @@
   .header .header-tiny-image-container {
     width: 80px; }
 
+.main-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem 0; }
+  .main-container .main-tittle {
+    color: #ffcd01; }
+  .main-container .main-description {
+    padding: 0 2rem;
+    margin: 0; }
+
+.pokemon-list-container {
+  display: flex; }
+
+.container-img-details {
+  width: 90%;
+  margin: auto; }
+  .container-img-details .img-details {
+    width: 100%; }
+
+@media (min-width: 1021px) {
+  .container-img-details .img-details {
+    width: 80%; } }
+.footer-container {
+  background: #212529; }
+  .footer-container .footer-image-container {
+    width: 200px;
+    margin: auto; }
+  .footer-container .footer-image {
+    width: 100%; }
+
 /*# sourceMappingURL=style.css.map */
