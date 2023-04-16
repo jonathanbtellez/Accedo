@@ -12,6 +12,8 @@ $font-family:'Roboto', sans-serif;
     font-family: $font-family;
     font-size: 16px;
 }
+//------------------------ UTILS -----------------------------
+@import "utils/buttons.scss";
 
 //---------------------- HEADER -------------------------------
 @import "header/header.scss";
@@ -19,7 +21,9 @@ $font-family:'Roboto', sans-serif;
 //---------------------- HEADER -------------------------------
 @import "main/main";
 @import "main/pokemon-list";
-@import "main/img-details.scss";
+@import "main/img-details";
+@import "main/singIn";
+
 
 //------------------------ FOOTER -----------------------------
 @import "footer/footer";
