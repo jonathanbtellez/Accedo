@@ -7,6 +7,12 @@
 .button-customize {
   width: 65%; }
 
+.visible {
+  display: flex; }
+
+.invisible {
+  display: none; }
+
 .header {
   background: #212529; }
   .header .header-image {

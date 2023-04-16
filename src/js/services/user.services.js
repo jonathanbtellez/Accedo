@@ -54,3 +54,7 @@ const createUser = async (user) => {
         return null;
     }
 }
+
+export const userServices = {
+    createUser
+}
