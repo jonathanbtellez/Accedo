@@ -1,0 +1,13 @@
+.main-container{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem 0;
+    .main-tittle{
+        color:$fifth-color;
+    }
+    .main-description{
+        padding: 0 2rem;
+        margin: 0;
+    }
+}

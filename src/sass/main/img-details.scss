@@ -1,0 +1,15 @@
+.container-img-details{
+    width: 90%;
+    margin: auto;
+    .img-details{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1021px){
+    .container-img-details{
+        .img-details{
+            width: 70%;
+        }
+    }
+}

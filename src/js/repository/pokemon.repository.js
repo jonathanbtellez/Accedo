@@ -6,17 +6,18 @@ const URL = "https://pokeapi.co/api/v2/pokemon/";
  */
 const getPokemons = async () => { const response = await fetch(URL); const jsonData = await response.json(); return jsonData.results; }
 
-const pokemon = await getPokemons();
-console.table(pokemon);
 /**
  * This method do a fetching of the pokemon information that are in saved in the API
  * @param {Number} idPokemon 
  * @returns 
  */
-const getPokemon = async (idPokemon) => { const response = await fetch(URL + idPokemon); const jsonData = await response.json(); return jsonData; }
-console.log(getPokemon(1))
+const getPokemon = async (pokemonUrl) => { 
+    const response = await fetch(pokemonUrl); 
+    const jsonData = await response.json(); 
+    return jsonData; 
+}
 
-export const pokemonService = {
+export const pokemonRepository = {
     getPokemons,
     getPokemon
 }

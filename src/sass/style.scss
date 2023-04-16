@@ -1,0 +1,25 @@
+$primary-color: #f8f9fa;
+$secondary-color: #ced4da;
+$third-color: #495057;
+$fourth-color: #212529;
+$fifth-color: #ffcd01;
+$font-family:'Roboto', sans-serif;
+
+//----------------------- GLOBAL -----------------------------
+.body{
+    background: $third-color;
+    color: $secondary-color;
+    font-family: $font-family;
+    font-size: 16px;
+}
+
+//---------------------- HEADER -------------------------------
+@import "header/header.scss";
+
+//---------------------- HEADER -------------------------------
+@import "main/main";
+@import "main/pokemon-list";
+@import "main/img-details.scss";
+
+//------------------------ FOOTER -----------------------------
+@import "footer/footer";
