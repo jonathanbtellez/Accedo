@@ -1,0 +1,15 @@
+.container-form-sing-in{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    .input-form-sign-in{
+        background: $third-color;
+        border: none;
+        box-shadow: 0px 0px 3px 0px rgba($color: $fifth-color, $alpha: .7);
+        color: $secondary-color;
+        outline: none;
+        padding: .4rem .5rem;
+        width: 100%;
+    }
+}
