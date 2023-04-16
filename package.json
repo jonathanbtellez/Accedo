@@ -4,6 +4,7 @@
   "description": "\"App to show a lit of pokemons from pokeApi\"",
   "main": "index.js",
   "scripts": {
+    "start": "json-server --watch db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/jonathanbtellez/Accedo#readme",
   "dependencies": {
-    "bootstrap": "^5.3.0-alpha3"
+    "bootstrap": "^5.3.0-alpha3",
+    "json-server": "^0.17.3"
   }
 }
