@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "jonathanbtellez@gmail.com",
+      "name": "Jonathan",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "email": "djuanca@gmail.com",
+      "name": "david",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "email": "asdfa@coreeo.com",
+      "name": "Manuel",
+      "password": "123456"
+    },
+    {
+      "id": 4,
+      "email": "ajsdfa@coreeo.com",
+      "name": "Manuel",
+      "password": "123456"
+    }
+  ]
+}
