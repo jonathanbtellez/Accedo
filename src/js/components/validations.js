@@ -37,8 +37,18 @@ const validatePassword = (password) => {
     return message;
 }
 
+const validateUser = () => {    
+    return "The email is used for other person please try with other email.";
+}
+
+const validateSesssionUser = () =>{
+    return "Sometinhg went wrong, please verify your email and password or sing in.";
+}
+
 export const validations = {
     validateName,
     validateEmail,
-    validatePassword
+    validatePassword, 
+    validateUser,
+    validateSesssionUser
 }

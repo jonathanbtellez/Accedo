@@ -21,6 +21,10 @@ const generateId = (list) => {
 const checkEmail = (list, email) => {
     return list.some((a) => a.email == email);
 }
+
+const filterEmail = (list, email) => {
+    return list.filter((user) => user.email == email);
+}
 /**
  * Method to that use the user repository to get all users
  * @returns saved users
@@ -33,28 +37,46 @@ const getUsers = async () => {
  * Method to that use the user repository to get all users
  * @returns saved user
  */
-const getUser = async () => {
-    return await userRepository.getUser();
+const getUser = async (id) => {
+    return await userRepository.getUser(id);
 }
 
 
 /**
  * Method to that use the user repository create an user but before 
  * this method implement the logic to guarantee the quality of the information  
- * @param {User } user
+ * @param { User } user
  * @returns 
  */
 const createUser = async (user) => {
     const list = await getUsers();
     user.setId(generateId(list));
     const isEmailSingin = checkEmail(list, user.getEmail());
-    if (!isEmailSingin) {
-        return await userRepository.createUser(user.getId(), user.getEmail(), user.getName(), user.getPassword());
-    } else {
-        return null;
+    let canCreateUser = false;
+    console.log(isEmailSingin);
+    if(!isEmailSingin){
+        await userRepository.createUser(user.getId(), user.getEmail(), user.getName(), user.getPassword());
+        canCreateUser = true;
+    }else{
+        canCreateUser = false;
     }
+    return canCreateUser;
+}
+
+const createSessionUser = async (email, password)=>{
+    const list = await getUsers();
+    const emailResult = filterEmail(list, email);
+    let user = null;
+    if(emailResult.length != 0){
+        user = await getUser(emailResult[0].id);
+        if(user.password  != password){
+            user = null
+        }
+    }
+    return user;
 }
 
 export const userServices = {
-    createUser
+    createUser,
+    createSessionUser
 }

@@ -21,3 +21,7 @@ Para poder tener la experiencia completa que ofrece la solucion planteada es imp
 * Ejecutar el siguiente comando para conectarse al archivo db.json el cual contiene almacenada los datos de los usuarios registrados.  
 
 ``` json-server --watch db.json ```
+
+* Si el area de trbajo es un codespace de github usar el siguiente comando para conectarse a la api
+
+``` json-server --watch db.json --host 0.0.0.0```

@@ -1,4 +1,4 @@
-const URL = "http://localhost:3000/users";
+const URL = "http://localhost:3000/users/";
 
 
 /**
@@ -31,7 +31,7 @@ const getUser = async (id)=> {
  * @returns POST Request
  */
 const createUser = async (id, email, name, password) =>{
-    return fetch(URL,{
+    fetch(URL,{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -45,4 +45,3 @@ export const userRepository = {
   getUser,
   createUser
 }
-// createUser(2,"djuanca@gmail.com","david","123456");
