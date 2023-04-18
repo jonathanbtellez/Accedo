@@ -1,5 +1,11 @@
 import { userController } from "../controller/user.controller.js";
 import { validations } from "./validations.js";
+
+/**
+ * Create a HTML element with the error message that receive like parameter
+ * @param {String} message
+ * @param {Node} form 
+ */
 const showError = (message, form) => {
     form.classList.remove("invisible");
     const ul = document.createElement("ul");
@@ -39,7 +45,6 @@ btnLogin.addEventListener("click", async (e) =>{
     }
     if(user != null){
         userController.saveUserSession(user);
-        console.log(user);
         location.href = "../index.html";
     }else{
         if(email != undefined && password != undefined){

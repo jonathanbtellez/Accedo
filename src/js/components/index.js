@@ -1,7 +1,7 @@
-import { pokemonControlller } from "../controller/pokemon.controller.js";
+import { pokemonController } from "../controller/pokemon.controller.js";
 import { userController } from "../controller/user.controller.js";
 
-await pokemonControlller.loadPokemons();
+await pokemonController.loadPokemons();
 
 const userActiveInfo = userController.getUserSession();
 userController.insertSessionInfo(userActiveInfo);
@@ -25,7 +25,6 @@ pokemonCards.forEach(pokemonCard => {
                 confirmButtonText: 'Registrate',
                 denyButtonText: `Iniciar sesion`,
               }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     location.href = "./views/signin.html";
                 } else if (result.isDenied) {
@@ -35,4 +34,3 @@ pokemonCards.forEach(pokemonCard => {
         }
     });
 });
-

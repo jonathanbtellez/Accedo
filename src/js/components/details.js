@@ -1,5 +1,4 @@
-import { pokemonControlller } from "../controller/pokemon.controller.js";
+import { pokemonController } from "../controller/pokemon.controller.js";
 
-const pokemon = await pokemonControlller.getInformation();
-console.log(pokemon);
-await pokemonControlller.loadPokemon(pokemon)
+const pokemon = await pokemonController.getInformation();
+await pokemonController.loadPokemon(pokemon);

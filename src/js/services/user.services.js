@@ -53,7 +53,6 @@ const createUser = async (user) => {
     user.setId(generateId(list));
     const isEmailSingin = checkEmail(list, user.getEmail());
     let canCreateUser = false;
-    console.log(isEmailSingin);
     if(!isEmailSingin){
         await userRepository.createUser(user.getId(), user.getEmail(), user.getName(), user.getPassword());
         canCreateUser = true;
@@ -62,7 +61,12 @@ const createUser = async (user) => {
     }
     return canCreateUser;
 }
-
+/**
+ * Returns a user id the info received is present in the db if not return null; 
+ * @param {string} email 
+ * @param {string} password 
+ * @returns 
+ */
 const createSessionUser = async (email, password)=>{
     const list = await getUsers();
     const emailResult = filterEmail(list, email);

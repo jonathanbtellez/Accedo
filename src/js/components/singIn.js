@@ -2,6 +2,11 @@ import { userController } from "../controller/user.controller.js";
 import User from "../models/user.class.js";
 import { validations } from "./validations.js";
 
+/**
+ * Create a HTML element with the error message that receive like parameter
+ * @param {String} message
+ * @param {Node} form 
+ */
 const showError = (message, form) => {
     form.classList.remove("invisible");
     const ul = document.createElement("ul");
@@ -31,19 +36,18 @@ btnSingIn.addEventListener("click", async (e) => {
     isValidName != "true" ? showError(isValidName, formError) : user.setName(nameInForm);
     isValidEmail != "true" ? showError(isValidEmail, formError) : user.setEmail(emailInForm);
     isValidPassword != "true" ? showError(isValidPassword, formError) : user.setPassword(passwordInForm);
-    
-    let wasUserCreated = false;
+
+    let wasUserCreated;
     if (user.getEmail() != undefined && user.getEmail() != undefined && user.getPassword() != undefined) {
         await userController.createUser(user).then((value) => {
-            if(value){
-                wasUserCreated = value;
-            }else{
-                showError(validations.validateUser(),formError);
-                wasUserCreated = value;
-            };
+            wasUserCreated = value;
         })
     }
-    if(wasUserCreated){
-        window.location.href = "./login.html";
+    if (wasUserCreated) {
+        location.href = "./login.html";
+    } else {
+        if (user.getEmail() != undefined && user.getEmail() != undefined && user.getPassword() != undefined) {
+            showError(validations.validateUser(), formError);
+        }
     }
 });

@@ -25,3 +25,23 @@ Para poder tener la experiencia completa que ofrece la solucion planteada es imp
 * Si el area de trbajo es un codespace de github usar el siguiente comando para conectarse a la api
 
 ``` json-server --watch db.json --host 0.0.0.0```
+
+
+# To improve
+* Insert responsive design in the views sign in, log in ang improve the pokemon card details in tiny screens
+
+# preview
+## Sign in
+![view/signin](src/assets/preview/signin.png "view/signin")
+![view/signin](src/assets/preview/signin2.png "view/signin")
+
+## log in
+![view/login](src/assets/preview/loginin.png "view/login")
+
+## Index
+![view/index](src/assets/preview/index.png "view/index")
+![view/index](src/assets/preview/index2.png "view/index")
+![validation](src/assets/preview/validation.png "validation")
+
+## Details
+![view/detail](src/assets/preview/details.png "view/details")
