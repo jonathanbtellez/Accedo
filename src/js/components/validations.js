@@ -1,3 +1,8 @@
+/**
+ * Returns a different message depending on the result of the validation.
+ * @param {String} name 
+ * @returns 
+ */
 const validateName = (name) => {
     let message = ""
     const regex = new RegExp("^[a-zA-Z]+$");
@@ -11,6 +16,11 @@ const validateName = (name) => {
     return message;
 }
 
+/**
+ * Returns a different message depending on the result of the validation.
+ * @param {String} email 
+ * @returns 
+ */
 const validateEmail = (email) => {
     let message = ""
     const regex = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
@@ -24,6 +34,11 @@ const validateEmail = (email) => {
     return message;
 }
 
+/**
+ * Returns a different message depending on the result of the validation.
+ * @param {String} password 
+ * @returns 
+ */
 const validatePassword = (password) => {
     let message = ""
     const regex = new RegExp("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
@@ -37,8 +52,26 @@ const validatePassword = (password) => {
     return message;
 }
 
+/**
+ * Returns a specific message to show information about the user validation.
+ * @returns 
+ */
+const validateUser = () => {    
+    return "The email is used for other person please try with other email.";
+}
+
+/**
+ * Returns a specific message to show information about the session user validation.
+ * @returns 
+ */
+const validateSesssionUser = () =>{
+    return "Sometinhg went wrong, please verify your email and password or sing in.";
+}
+
 export const validations = {
     validateName,
     validateEmail,
-    validatePassword
+    validatePassword, 
+    validateUser,
+    validateSesssionUser
 }

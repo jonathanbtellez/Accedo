@@ -1,4 +1,11 @@
+import { userController } from "../controller/user.controller.js";
 import { validations } from "./validations.js";
+
+/**
+ * Create a HTML element with the error message that receive like parameter
+ * @param {String} message
+ * @param {Node} form 
+ */
 const showError = (message, form) => {
     form.classList.remove("invisible");
     const ul = document.createElement("ul");
@@ -10,7 +17,7 @@ const showError = (message, form) => {
 
 
 const btnLogin = document.querySelector("#btn-logIn");
-btnLogin.addEventListener("click", (e) =>{
+btnLogin.addEventListener("click", async (e) =>{
     e.preventDefault();
     const formError = document.querySelector("#form-error");
     formError.innerHTML = "";
@@ -30,5 +37,18 @@ btnLogin.addEventListener("click", (e) =>{
     isValidEmail !=  "true"?showError(isValidEmail, formError):email=emailInForm;
     isValidPassword !=  "true"?showError(isValidPassword, formError):password=passwordInForm;
     
-    console.log(email, password);
+    let user;
+    if(email != undefined && password != undefined){
+        await userController.createSessionUser(email, password).then(value => {
+            user = value;
+        })
+    }
+    if(user != null){
+        userController.saveUserSession(user);
+        location.href = "../index.html";
+    }else{
+        if(email != undefined && password != undefined){
+            showError(validations.validateSesssionUser(),formError);
+        }
+    }
 });

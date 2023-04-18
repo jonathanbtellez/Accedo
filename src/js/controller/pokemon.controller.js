@@ -3,7 +3,7 @@ import { pokemonService } from "../services/pokemon.services.js";
 /**
  * Method to create a pokemon card template to show each pokemon in the list
  * @param {String} name 
- * @returns Java script template with the HTLM and JS needed to show the pokemon info.
+ * @returns Javascript template with the HTLM and JS needed to show the pokemon info.
  */
 const createTemplate = (name) => {
     const templateCard =
@@ -37,7 +37,14 @@ const loadPokemons = async () => {
     });
 }
 
-
+/**
+ * Returns a html template to show the pokemon details
+ * @param {String} imgfront 
+ * @param {String} name 
+ * @param { Number } height 
+ * @param {Array} moves 
+ * @returns 
+ */
 const createTemplateDetails = (imgfront, name, height, moves) => {
     const templateCard = `
     <div class="card text-bg-dark m-0 text-center p-2" style="width: 80%">
@@ -67,12 +74,19 @@ const createTemplateDetails = (imgfront, name, height, moves) => {
     return templateCard;
 }
 
+/**
+ * Create a HTML element on the DOM
+ * @param {String} imgfront 
+ * @param {String} name 
+ * @param { Number } height 
+ * @param {Array} moves 
+ * @returns 
+ */ 
 const createCardDetails = (imgfront, name, height, moves) => {
     const cardTemplate = document.querySelector("#card-pokemon-detail");
     const template = createTemplateDetails(imgfront, name, height, moves);
     cardTemplate.innerHTML = template;
-
-} 
+}
 /**
  * Method that do a filter in the pokemons list a return the url where is all pokemon data
  * @param {String} name 
@@ -85,18 +99,29 @@ const findPokemonURI = async (name) => {
     return pokemon[0].url;
 }
 
-
+/**
+ * Returns the name parameter present in the URL
+ * @returns 
+ */
 const getInformation = async () => {
     const currentURL = new URL(window.location);
     const name = currentURL.searchParams.get("name");
     return name;
 }
 
+/**
+ * Returns the pokemon data saved in the API
+ * @param {String} name 
+ * @returns 
+ */
 const getPokemon = async (name) => {
     const polemonURL = await findPokemonURI(name);
     return await pokemonService.getPokemon(polemonURL);
 }
 
+/**
+ * Use the method getPokemon to get pokemon data and the push this data to the funtion createCardDetails
+ */
 const loadPokemon = async (name) => {
     const moves = [];
     const pokemon = await getPokemon(name);
@@ -109,10 +134,9 @@ const loadPokemon = async (name) => {
     moves.push(pokemon.moves[3].move.name);
     moves.push(pokemon.moves[4].move.name);
     moves.push(pokemon.moves[0].move.name);
-    console.log(imgFront);
-    createCardDetails(imgFront,pokemonName,height,moves);
+    createCardDetails(imgFront, pokemonName, height, moves);
 }
-export const pokemonControlller = {
+export const pokemonController = {
     loadPokemons,
     getInformation,
     loadPokemon
